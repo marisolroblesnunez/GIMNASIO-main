@@ -24,37 +24,37 @@ echo '<button id="cerrarSesion">Cerrar Sesión</button>'; //// le pongo el id po
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de control</title>
+    <title>reserva tu clase</title>
     <link rel="stylesheet" href="cs/estilos.css">
 </head>
 <body>
     <div class="container">
-<h1>Panel de control</h1>
+<h1>Clases</h1>
 <div class="panelCrear">
-<button id="crear"class="btn-crear">Crear un nuevo libro</button>
+<button id="crear"class="btn-crear">suscribirse a una clase</button>
 </div>
 <!-- enctype="multipart/form-data" se utiliza cuando queremos subir archivos-->
 <form method= "POST" enctype="multipart/form-data"> 
-    <h2> 📚Nuevo libro</h2>
+    <h2> 📚inscribete y disfruta tu clase</h2>
     
     
 <div class="form-group">
-<label for="titulo">Titulo</label>
+<label for="titulo">yoga</label>
 <input type="text" id="titulo" name="titulo" required>
 <small class="error" id="error-titulo"></small>
 </div>
 
 <div class="form-group">
-<label for="autor">Autor</label>
+<label for="autor">pilates</label>
 <input type="text" id="autor" name="autor" required>
 <small class="error" id="error-autor"></small>
 </div>
 <div class="form-group">
-<label for="genero">Género</label>
+<label for="genero">GAP</label>
 <input type="text" id="genero" name="genero">
 </div>
 <div class= form-group>
-<label for="fecha_publicacion">Fecha de publicación</label>
+<label for="fecha_publicacion">Fecha de inscripcion</label>
 <input type="number" id="fecha_publicacion" name="fecha_publicacion" min="1000">
 <small class="error" id="error-publicacion"></small>
 </div>
@@ -80,7 +80,7 @@ echo '<button id="cerrarSesion">Cerrar Sesión</button>'; //// le pongo el id po
 </div>
 
 
-<button type="submit" id="btnGuardar">Guardar libro</button>
+<button type="submit" id="btnGuardar">Guardar inscripcion</button>
 </form>
 <table class="tablaLibros" id="tablaLibros"></table>
  </div>
