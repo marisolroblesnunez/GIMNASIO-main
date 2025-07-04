@@ -1,6 +1,6 @@
 <?php
-// CONFIG/config.php
-// Variables globales
 
-define('ADMIN_USER', 'admin');
-define('ADMIN_PASS', '1234'); // Puedes cambiarlos
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'gimnasio');

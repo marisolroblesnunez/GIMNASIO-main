@@ -1,17 +1,34 @@
 <?php
-session_start();
-require_once '../CONFIG/config.php';
+include_once '../data/usuarioDB.php';
+require_once '../config/database.php';
 
-// Recogemos datos del formulario
-$usuario = $_POST['usuario'] ?? '';
-$clave = $_POST['clave'] ?? '';
+$database = new Database();
+$usuarioDB = new UsuarioDB($database);
 
-// Comparamos con los valores definidos
-if ($usuario === ADMIN_USER && $clave === ADMIN_PASS) {
-    $_SESSION['admin'] = true;
-    header('Location: index.php');
-    exit;
-} else {
-    header('Location: login.php?error=1');
-    exit;
+//comprobar si se ha recibido un token
+if(isset($_GET['token'])){
+    $token = $_GET['token'];
+    $resultado = $usuarioDB->verificarToken($token);
+    $mensaje = $resultado['mensaje'];
+}else{
+    header("Location: login.php");
+    exit();
 }
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de cuenta</title>
+    <link rel="stylesheet" href="cs/login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Verificación de cuenta</h1>
+        <p class="mensaje"><?php echo $mensaje; ?></p>
+        <a href="index.php" class="volver">Ir a Iniciar Sesión</a>
+    </div>
+</body>
+</html>
