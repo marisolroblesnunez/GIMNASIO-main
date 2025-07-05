@@ -36,8 +36,31 @@ if(isset($_SESSION['logueado']) && $_SESSION['logueado'] == true){
 
 //si son correctos iniciar sesion y redirigir a index
 //si son incorrectos mostrar un mensaje de error
+///////////////////NO SE SI PONER ESTO O NO
+// if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])){
+//     //comprobar que el usuario y la contraseña son correctos
+//     include_once '../data/usuarioDB.php';
+//     require_once '../config/database.php';
 
+//     $database = new Database();
+//     $usuarioDB = new UsuarioDB($database);
 
+//     $email = $_POST['email'];
+//     $password = $_POST['password'];
+
+//     $resultado = $usuarioDB->login($email, $password);
+
+//     if($resultado['success']){
+//         $_SESSION['logueado'] = true;
+//         $_SESSION['mensaje'] = "Bienvenido " . $resultado['usuario']['nombre'];
+//         header("Location: index.php");
+//         exit();
+//     } else {
+//         $_SESSION['mensaje'] = $resultado['mensaje'];
+//         header("Location: login.php");
+//         exit();
+//     }
+// }
 
 ?>
 <!DOCTYPE html>
@@ -46,7 +69,7 @@ if(isset($_SESSION['logueado']) && $_SESSION['logueado'] == true){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="cs/login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <div class="container">

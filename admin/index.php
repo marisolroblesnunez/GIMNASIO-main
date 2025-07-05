@@ -16,7 +16,8 @@ if(isset($_SESSION['mensaje'])){    /////////si está logueado, muestrame el men
 }
 
 echo '<button id="cerrarSesion">Cerrar Sesión</button>'; //// le pongo el id porque la funcion del boton la tengo que hacer desde javascript
-
+include_once '../data/claseDB.php';
+require_once '../config/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ echo '<button id="cerrarSesion">Cerrar Sesión</button>'; //// le pongo el id po
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reserva tu clase</title>
-    <link rel="stylesheet" href="cs/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <div class="container">
