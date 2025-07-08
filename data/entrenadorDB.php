@@ -257,19 +257,7 @@ class entrenadorDB {
         }
         return null; // No se encontró ningún entrenador con esa especialidad, nombre y teléfono
     }
-    public function getBySpecialtyAndNameAndEmail($especialidad, $nombre, $email) {
-        $sql = "SELECT * FROM {$this->table} WHERE especialidad = ? AND nombre = ? AND email = ?";
-        $stmt = $this->db->prepare($sql);
-        if ($stmt) {
-            $stmt->bind_param("sss", $especialidad, $nombre, $email);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            if ($result->num_rows > 0) {
-                return $result->fetch_assoc(); // Devuelve el primer entrenador encontrado
-            }
-            $stmt->close();
-        }
-        return null; // No se encontró ningún entrenador con esa especialidad, nombre y email
+   
     }
     public function getBySpecialtyAndPhoneAndEmail($especialidad, $telefono, $email) {
         $sql = "SELECT * FROM {$this->table} WHERE especialidad = ? AND telefono = ? AND email = ?";
